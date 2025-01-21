@@ -30,6 +30,12 @@ Install dependencies using:
 pip install -r requirements.txt
 ```
 
+### Alternatively you can use this command
+
+```bash
+pip install fastapi uvicorn pandas scikit-learn joblib numpy
+```
+
 ## Setup Guide
 
 1. **Clone the Repository**
@@ -72,9 +78,8 @@ Response:
 }
 ```
 
-### 2. Train Model (/train)
-
-Train the machine learning model using the uploaded dataset.
+### 2. Train Model (/train) 
+This endpoint trains the machine learning model using the uploaded dataset. Please note that the training process may take several minutes to complete due to the grid search cross-validation method being used to optimize model hyperparameters.
 
 ```bash
 curl -X POST "http://127.0.0.1:8000/train"
