@@ -16,7 +16,7 @@ This API allows you to predict machine downtime or production defects in a manuf
 
 To run the API, ensure you have the following installed:
 
-- Python 3.7+
+- Python 3.7+ (currently using 3.9.11)
 - FastAPI
 - Uvicorn (for running the server)
 - Pandas
@@ -36,8 +36,8 @@ pip install -r requirements.txt
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/yourusername/predictive-analysis-manufacturing.git
-cd predictive-analysis-manufacturing
+git clone https://github.com/BadassAman4014/Predictive-Maintenance-API.git
+cd Predictive-Maintenance-API
 ```
 
 2. **Install Dependencies**
