@@ -10,7 +10,6 @@ This API allows you to predict machine downtime or production defects in a manuf
 4. [Example Requests](#example-requests)
 5. [Evaluation Metrics](#evaluation-metrics)
 6. [Testing](#testing)
-7. [License](#license)
 
 ## Requirements
 
@@ -116,7 +115,3 @@ To test the API, use tools like Postman or cURL to interact with the endpoints. 
 - Upload data
 - Train the model
 - Make predictions
-
-## License
-
-[Add your license information here]
