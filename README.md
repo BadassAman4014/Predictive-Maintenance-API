@@ -108,4 +108,5 @@ The API has three main endpoints:
 
 ## Testing
 
-To test the API, use tools like Postman or cURL to interact with the endpoints. You can run the server locally as described and use the examples above to upload data, train the model, and make predictions.
+To test the API, use tools like Postman or cURL to interact with the endpoints. 
+You can run the server locally as described and use the examples above to upload data, train the model, and make predictions.
