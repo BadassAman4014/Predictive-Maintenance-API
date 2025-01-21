@@ -69,8 +69,7 @@ curl -X POST "http://127.0.0.1:8000/upload" -F "file=@machine_downtime.csv"
 Response:
 ```json
 {
-    "message": "File uploaded successfully",
-    "columns": ["Date", "Machine_ID", "Assembly_Line_No", "Hydraulic_Pressure(bar)", "Coolant_Pressure(bar)", ...]
+  "message":"File uploaded successfully","columns":["Date","Machine_ID","Assembly_Line_No","Hydraulic_Pressure(bar)","Coolant_Pressure(bar)","Air_System_Pressure(bar)","Coolant_Temperature","Hydraulic_Oil_Temperature(?C)","Spindle_Bearing_Temperature(?C)","Spindle_Vibration(?m)","Tool_Vibration(?m)","Spindle_Speed(RPM)","Voltage(volts)","Torque(Nm)","Cutting(kN)","Downtime"]
 }
 ```
 
@@ -85,9 +84,8 @@ curl -X POST "http://127.0.0.1:8000/train"
 Response:
 ```json
 {
-    "message": "Model trained successfully",
-    "accuracy": 0.95,
-    "confusion_matrix": [[50, 5], [10, 35]]
+  "message":"Model trained successfully","accuracy":0.992,
+  "confusion_matrix":[[245,2],[2,251]]
 }
 ```
 
@@ -96,31 +94,14 @@ Response:
 Make a prediction based on input data.
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/predict" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "Machine_ID": "Makino-L1-Unit1-2013",
-    "Date": "31-12-2021",
-    "Hydraulic_Pressure(bar)": 125.33,
-    "Coolant_Pressure(bar)": 4.93,
-    "Air_System_Pressure(bar)": 6.19,
-    "Coolant_Temperature": 35.3,
-    "Hydraulic_Oil_Temperature(?C)": 47.4,
-    "Spindle_Bearing_Temperature(?C)": 34.6,
-    "Spindle_Vibration(?m)": 1.38,
-    "Tool_Vibration(?m)": 25.27,
-    "Spindle_Speed(RPM)": 19856,
-    "Voltage(volts)": 368,
-    "Torque(Nm)": 14.2,
-    "Cutting(kN)": 2.68
-  }'
+curl -X POST "http://127.0.0.1:8000/predict" -H "Content-Type: application/json" -d "{\"Machine_ID\":\"Makino-L1-Unit1-2013\",\"Date\":\"31-12-2021\",\"Hydraulic_Pressure(bar)\":125.33,\"Coolant_Pressure(bar)\":4.93,\"Air_System_Pressure(bar)\":6.19,\"Coolant_Temperature\":35.3,\"Hydraulic_Oil_Temperature(?C)\":47.4,\"Spindle_Bearing_Temperature(?C)\":34.6,\"Spindle_Vibration(?m)\":1.38,\"Tool_Vibration(?m)\":25.27,\"Spindle_Speed(RPM)\":19856,\"Voltage(volts)\":368,\"Torque(Nm)\":14.2,\"Cutting(kN)\":2.68}"
 ```
 
 Response:
 ```json
 {
-    "Downtime": "Machine_Failure",
-    "Confidence": 0.85
+  "Downtime":"Machine_Failure",
+  "Confidence":0.53
 }
 ```
 
